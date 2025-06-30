@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/page4.css" />
+    <link rel="stylesheet" href="../css/header-footer.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/deb8446ab8.js"
+      crossorigin="anonymous"
+    ></script>
+    <style></style>
+  </head>
+  <body style="position: relative; min-height: 100vh">
+    <!-- Main Header -->
+    <header>
+      <a href="index.html" style="text-decoration: none">
+        <div class="Brand">
+          <div class="logo">
+            <img
+              class="bag-icon"
+              src="../assets/images/shopping_bag_icon.svg"
+              alt="Shopping Bag"
+            />
+          </div>
+          <h2>Brand</h2>
+        </div></a
+      >
+      <div class="search-form">
+        <input type="search" name="search" id="search" placeholder="Search" />
+        <select id="category" name="category">
+          <option value="all">All Categories</option>
+          <option value="electronics">Electronics</option>
+          <option value="fashion">Fashion</option>
+          <option value="books">Books</option>
+          <option value="home">Home & Kitchen</option>
+          <option value="sports">Sports & Outdoors</option>
+        </select>
+        <button class="btn">Search</button>
+      </div>
+      <div class="actions">
+        <div class="icon">
+          <i class="fa-solid fa-user fa-lg"></i>
+          <p>Profile</p>
+        </div>
+        <div class="icon">
+          <i class="fa-solid fa-message fa-lg"></i>
+          <p>Messages</p>
+        </div>
+        <div class="icon">
+          <i class="fa-solid fa-heart fa-lg"></i>
+          <p>Orders</p>
+        </div>
+        <a href="page5.html"
+          ><div class="icon">
+            <i class="fa-solid fa-cart-shopping fa-lg"></i>
+            <p>My cart</p>
+          </div></a
+        >
+      </div>
+    </header>
+
+    <!-- navigation bar -->
+    <nav class="head-nav">
+      <div class="tabs">
+        <i class="fa-solid fa-bars fa-lg"></i>
+        <h3>All Categories</h3>
+        <h3>Hot Offers</h3>
+        <h3>Gift boxes</h3>
+        <h3>Projects</h3>
+        <h3>Menu item</h3>
+        <div style="position: relative">
+          <h3>Help</h3>
+          <div class="help-sa1 show">
+            <i class="fa-solid fa-angle-down fa-lg" id="show-help"></i>
+          </div>
+          <div class="help-sa2 no-show">
+            <i class="fa-solid fa-angle-up fa-lg" id="no-show-help"></i>
+          </div>
+
+          <div class="help-list-wrapper" id="help-dropdown">
+            <div class="help-list">
+              <h3>Customer Support</h3>
+              <h3>FAQs</h3>
+              <h3>How It Works</h3>
+              <h3>Contact Us</h3>
+              <h3>Report a Problem</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pay_ship">
+        <div class="pay" style="position: relative">
+          <h3 class="show-pay">English, USD</h3>
+          <div class="money-sa1 show">
+            <i class="fa-solid fa-angle-down fa-lg" id="show-money"></i>
+          </div>
+          <div class="money-sa2 no-show">
+            <i class="fa-solid fa-angle-up fa-lg" id="no-show-money"></i>
+          </div>
+
+          <div class="currency-list-wrapper" id="dropdown">
+            <div class="currency-list">
+              <h3>America, USD</h3>
+              <h3>Pakistan, PKR</h3>
+              <h3>Japan, YEN</h3>
+              <h3>United Kingdom, GBP</h3>
+              <h3>European Union, EUR</h3>
+              <h3>Canada, CAD</h3>
+              <h3>Australia, AUD</h3>
+              <h3>China, CNY</h3>
+              <h3>India, INR</h3>
+              <h3>Saudi Arabia, SAR</h3>
+            </div>
+          </div>
+        </div>
+        <div class="ship" style="position: relative">
+          <h3 class="show-ship">Ship to:</h3>
+          <img src="../assets/images/flags/USA.png" alt="" class="show-ship" />
+
+          <div class="flag-sa1 show">
+            <i class="fa-solid fa-angle-down fa-lg" id="show-flag"></i>
+          </div>
+          <div class="flag-sa2 no-show">
+            <i class="fa-solid fa-angle-up fa-lg" id="no-show-flag"></i>
+          </div>
+
+          <div class="ship-list-wrapper" id="ship-dropdown">
+            <div class="ship-list">
+              <div>
+                <img src="../assets/images/flags/Arabic-Emirates.png" alt="" />
+                <p>Arabic Emirates</p>
+              </div>
+              <div>
+                <img src="../assets/images/flags/Australia.png" alt="" />
+                <p>Australia</p>
+              </div>
+              <div>
+                <img src="../assets/images/flags/Britan.png" alt="" />
+                <p>Britain</p>
+              </div>
+              <div>
+                <img src="../assets/images/flags/China.png" alt="" />
+                <p>China</p>
+              </div>
+              <div>
+                <img src="../assets/images/flags/Denmark.png" alt="" />
+                <p>Denmark</p>
+              </div>
+              <div>
+                <img src="../assets/images/flags/France.png" alt="" />
+                <p>France</p>
+              </div>
+              <div>
+                <img src="../assets/images/flags/germany.png" alt="" />
+                <p>Germany</p>
+              </div>
+              <div>
+                <img src="../assets/images/flags/Italy.png" alt="" />
+                <p>Italy</p>
+              </div>
+              <div>
+                <img src="../assets/images/flags/Russia.png" alt="" />
+                <p>Russia</p>
+              </div>
+              <div>
+                <img src="../assets/images/flags/USA.png" alt="" />
+                <p>USA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>&gt;</span>
+      <a href="page2_3.html">Clothings</a>
+      <span>&gt;</span>
+      <a href="page2_3.html">Men's wear</a>
+      <span>&gt;</span>
+      <span>Summer clothing</span>
+    </nav>
+
+    <!-- Product Card -->
+    <div class="product-card">
+      <div class="product-image">
+        <img src="../assets/images/product_details/1.jpg" alt="" />
+        <div class="row-images">
+          <img src="../assets/images/product_details/1.jpg" alt="" />
+          <img src="../assets/images/product_details/2.jpg" alt="" />
+          <img src="../assets/images/product_details/5.png" alt="" />
+          <img src="../assets/images/product_details/3.jpg" alt="" />
+          <img src="../assets/images/product_details/4.jpg" alt="" />
+          <img src="../assets/images/product_details/1.jpg" alt="" />
+        </div>
+      </div>
+      <div class="product-details">
+        <div class="stock">
+          <i class="fa-solid fa-check fa-lg" style="color: #00b517"></i>
+          <p>In Stock</p>
+        </div>
+        <div class="title">
+          <h2>Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle</h2>
+        </div>
+        <div class="ratings">
+          <img src="../assets/images/ratings/five.png" alt="five" />
+          <p class="reviews">9.5</p>
+          <span></span>
+          <div>
+            <img
+              src="../assets/images/product_details/comment.png"
+              alt="five"
+            />
+            <p>32 reviews</p>
+          </div>
+          <span></span>
+          <div>
+            <img src="../assets/images/product_details/bag.png" alt="five" />
+            <p>154 sold</p>
+          </div>
+        </div>
+        <div class="price">
+          <div class="piece piece1">
+            <h2>$98.00</h2>
+            <p>50-100 pcs</p>
+          </div>
+          <div class="piece piece2">
+            <h2>$90.00</h2>
+            <p>100-700 pcs</p>
+          </div>
+          <div class="piece piece3">
+            <h2>$78.00</h2>
+            <p>700+ pcs</p>
+          </div>
+        </div>
+        <div class="product-specs">
+          <div>
+            <div><span>Price:</span> <span>Negotiable</span></div>
+          </div>
+          <div
+            style="
+              border-top: 1px solid #e0e0e0;
+              border-bottom: 1px solid #e0e0e0;
+            "
+          >
+            <div><span>Type: </span> <span>Classic shoes</span></div>
+            <div><span>Material: </span> <span>Plastic material</span></div>
+            <div><span>Design:</span> <span>Modern nice</span></div>
+          </div>
+
+          <div style="border-bottom: 1px solid #e0e0e0">
+            <div>
+              <span>Customization: </span>
+              <span>Customized logo and design custom packages</span>
+            </div>
+            <div><span>Protection: </span> <span>Refund Policy</span></div>
+            <div>
+              <span>Warranty: </span> <span>2 years full warranty </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="supplier-content">
+        <div class="supplier-name">
+          <div>R</div>
+          <div class="supplier-title">
+            <div>Supplier</div>
+            <div>Guanjoi Trading LLC</div>
+          </div>
+        </div>
+        <div class="supplier-info">
+          <div>
+            <img src="../assets/images/flags/germany.png" alt="" />
+            <p>Germany, Berlin</p>
+          </div>
+          <div>
+            <img src="../assets/images/product_details/verified.png" alt="" />
+            <p>Verified Seller</p>
+          </div>
+          <div>
+            <img src="../assets/images/product_details/global.png" alt="" />
+            <p>Worldwide shipping</p>
+          </div>
+        </div>
+        <div class="supplier-btn">
+          <button>Send inquiry</button>
+          <button>Seller’s profile</button>
+        </div>
+        <div class="save">
+          <div class="sa1 show">
+            <i
+              class="fa-regular fa-heart fa-lg"
+              id="unsaved"
+              style="color: #0d6efd"
+            ></i>
+          </div>
+          <div class="sa2 no-show">
+            <i
+              class="fa-solid fa-heart fa-lg"
+              id="saved"
+              style="color: #0d6efd"
+            ></i>
+          </div>
+          <p>Save for later</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Information -->
+    <div class="details-section">
+      <div class="product-info">
+        <div class="product-header">
+          <h3>Description</h3>
+          <h3>Reviews</h3>
+          <h3>Shipping</h3>
+          <h3>About seller</h3>
+        </div>
+        <div class="description-para">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam,
+          </p>
+          <p>
+            Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+        <div class="specifications">
+          <div><span>Model</span> <span>#8786867</span></div>
+          <div><span>Style</span> <span>Classic style</span></div>
+          <div><span>Certificate</span> <span>ISO-898921212</span></div>
+          <div><span>Size</span> <span>34mm x 450mm x 19mm</span></div>
+          <div><span>Memory</span> <span>36GB RAM</span></div>
+        </div>
+        <div class="features">
+          <div class="feat">
+            <i class="fa-solid fa-check fa-lg" style="color: #00b517"></i>
+            <p>Some great feature name here</p>
+          </div>
+          <div class="feat">
+            <i class="fa-solid fa-check fa-lg" style="color: #00b517"></i>
+            <p>Lorem ipsum dolor sit amet, consectetur</p>
+          </div>
+          <div class="feat">
+            <i class="fa-solid fa-check fa-lg" style="color: #00b517"></i>
+            <p>Duis aute irure dolor in reprehenderit</p>
+          </div>
+          <div class="feat">
+            <i class="fa-solid fa-check fa-lg" style="color: #00b517"></i>
+            <p>Some great feature name here</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="may-like">
+        <h3>You may like</h3>
+        <div class="may-like-list"></div>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <div class="related-product">
+      <h3>Related Products</h3>
+      <div class="related-products-list"></div>
+    </div>
+
+    <!-- Super Discount -->
+    <div class="super-discount">
+      <div class="super-text">
+        <h3>Super discount on more than 100 USD</h3>
+        <p>Have you ever finally just write dummy info</p>
+      </div>
+      <div class="button-wrapper">
+        <button>Shop now</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="position: absolute; bottom: -380px">
+      <div class="footer2">
+        <div class="footer-content">
+          <div class="col col1">
+            <div class="Brand">
+              <div class="logo">
+                <img
+                  class="bag-icon"
+                  src="../assets/images/shopping_bag_icon.svg"
+                  alt="Shopping Bag"
+                />
+              </div>
+              <h2>Brand</h2>
+            </div>
+            <p>
+              Best information about the company gies here but now lorem ipsum
+              is
+            </p>
+            <div class="social-icons">
+              <img src="../assets/images/facebook.png" alt="" />
+              <img src="../assets/images/twitter.png" alt="" />
+              <img src="../assets/images/linkedin.png" alt="" />
+              <img src="../assets/images/instagram.png" alt="" />
+              <img src="../assets/images/youtube.png" alt="" />
+            </div>
+          </div>
+          <div class="col col2">
+            <h3>About</h3>
+            <ul>
+              <li>About Us</li>
+              <li>Find Store</li>
+              <li>Categories</li>
+              <li>Blogs</li>
+            </ul>
+          </div>
+          <div class="col col3">
+            <h3>Partnership</h3>
+            <ul>
+              <li>About Us</li>
+              <li>Find Store</li>
+              <li>Categories</li>
+              <li>Blogs</li>
+            </ul>
+          </div>
+          <div class="col col4">
+            <h3>Information</h3>
+            <ul>
+              <li>Help Center</li>
+              <li>Money Refund</li>
+              <li>Shipping</li>
+              <li>Contact Us</li>
+            </ul>
+          </div>
+          <div class="col col5">
+            <h3>Users</h3>
+            <ul>
+              <li>Login</li>
+              <li>Register</li>
+              <li>Settings</li>
+              <li>My Orders</li>
+            </ul>
+          </div>
+          <div class="col col6">
+            <h3>Get app</h3>
+            <ul>
+              <li>
+                <img
+                  class="appdownload"
+                  src="../assets/images/appstore-removebg-preview.png"
+                  alt=""
+                />
+              </li>
+              <li>
+                <img
+                  class="appdownload2"
+                  src="../assets/images/googleplay-removebg-preview.png"
+                  alt=""
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy;2025 Ecommerce</p>
+          <div class="language" style="position: relative">
+            <img src="../assets/images/flags/USA.png" alt="" class="show-lang"/>
+
+            <div class="lang-sa2 show">
+              <i class="fa-solid fa-angle-down fa-lg" id="show-lang"></i>
+            </div>
+            <div class="lang-sa1 no-show">
+              <i class="fa-solid fa-angle-up fa-lg" id="no-show-lang"></i>
+            </div>
+
+            <div class="lang-list-wrapper" id="lang-dropdown">
+              <div class="lang-list">
+                <div>
+                  <img
+                    src="../assets/images/flags/Arabic-Emirates.png"
+                    alt=""
+                  />
+                  <p>Arabic Emirates</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/Australia.png" alt="" />
+                  <p>Australia</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/Britan.png" alt="" />
+                  <p>Britain</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/China.png" alt="" />
+                  <p>China</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/Denmark.png" alt="" />
+                  <p>Denmark</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/France.png" alt="" />
+                  <p>France</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/germany.png" alt="" />
+                  <p>Germany</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/Italy.png" alt="" />
+                  <p>Italy</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/Russia.png" alt="" />
+                  <p>Russia</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/USA.png" alt="" />
+                  <p>USA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../JS/page4.js"></script>
+    <script src="../JS/script.js"></script>
+  </body>
+</html>

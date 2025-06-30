@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/page5.css" />
+    <link rel="stylesheet" href="../css/header-footer.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/deb8446ab8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body style="position: relative; min-height: 100vh">
+    <!-- Main Header -->
+    <header style="position: absolute; top: 0">
+      <a href="index.html" style="text-decoration: none">
+        <div class="Brand">
+          <div class="logo">
+            <img
+              class="bag-icon"
+              src="../assets/images/shopping_bag_icon.svg"
+              alt="Shopping Bag"
+            />
+          </div>
+          <h2>Brand</h2>
+        </div></a
+      >
+      <div class="search-form">
+        <input type="search" name="search" id="search" placeholder="Search" />
+        <select id="category" name="category">
+          <option value="all">All Categories</option>
+          <option value="electronics">Electronics</option>
+          <option value="fashion">Fashion</option>
+          <option value="books">Books</option>
+          <option value="home">Home & Kitchen</option>
+          <option value="sports">Sports & Outdoors</option>
+        </select>
+        <button class="btn">Search</button>
+      </div>
+      <div class="actions">
+        <div class="icon">
+          <i class="fa-solid fa-user fa-lg"></i>
+          <p>Profile</p>
+        </div>
+        <div class="icon">
+          <i class="fa-solid fa-message fa-lg"></i>
+          <p>Messages</p>
+        </div>
+        <div class="icon">
+          <i class="fa-solid fa-heart fa-lg"></i>
+          <p>Orders</p>
+        </div>
+        <a href="page5.html"
+          ><div class="icon">
+            <i class="fa-solid fa-cart-shopping fa-lg"></i>
+            <p>My cart</p>
+          </div></a
+        >
+      </div>
+    </header>
+
+    <!-- My Cart -->
+    <div class="cart">
+      <h2>My Cart <span>(3)</span></h2>
+      <div class="cart-info">
+        <div class="cart-product-list">
+          <div class="cart-item">
+            <div class="cart-product">
+              <div class="cart-item-image">
+                <img src="../assets/images/cart_items/shirt.png" alt="" />
+              </div>
+              <div class="cart-text">
+                <h4>T-shirts with multiple colors, for men and lady</h4>
+                <p>
+                  Size: medium, Color: blue, Material: Plastic Seller: Artel
+                  Market
+                </p>
+                <div class="cart-btn">
+                  <button>Remove</button>
+                  <button>Save for later</button>
+                </div>
+              </div>
+            </div>
+            <div class="cart-price">
+              <div class="price"><h3>$78.99</h3></div>
+              <div class="cart-quantity">
+                <p>Qty: <span>9</span></p>
+                <i class="fa-solid fa-angle-down fa-lg"></i>
+              </div>
+            </div>
+          </div>
+          <div class="cart-item">
+            <div class="cart-product">
+              <div class="cart-item-image">
+                <img src="../assets/images/cart_items/bag.png" alt="" />
+              </div>
+              <div class="cart-text">
+                <h4>T-shirts with multiple colors, for men and lady</h4>
+                <p>
+                  Size: medium, Color: blue, Material: Plastic Seller: Artel
+                  Market
+                </p>
+                <div class="cart-btn">
+                  <button>Remove</button>
+                  <button>Save for later</button>
+                </div>
+              </div>
+            </div>
+            <div class="cart-price">
+              <div class="price"><h3>$78.99</h3></div>
+              <div class="cart-quantity">
+                <p>Qty: <span>9</span></p>
+                <i class="fa-solid fa-angle-down fa-lg"></i>
+              </div>
+            </div>
+          </div>
+          <div class="cart-item">
+            <div class="cart-product">
+              <div class="cart-item-image">
+                <img src="../assets/images/cart_items/lamp.png" alt="" />
+              </div>
+              <div class="cart-text">
+                <h4>T-shirts with multiple colors, for men and lady</h4>
+                <p>
+                  Size: medium, Color: blue, Material: Plastic Seller: Artel
+                  Market
+                </p>
+                <div class="cart-btn">
+                  <button>Remove</button>
+                  <button>Save for later</button>
+                </div>
+              </div>
+            </div>
+            <div class="cart-price">
+              <div class="price"><h3>$78.99</h3></div>
+              <div class="cart-quantity">
+                <p>Qty: <span>9</span></p>
+                <i class="fa-solid fa-angle-down fa-lg"></i>
+              </div>
+            </div>
+          </div>
+          <div class="action-btn">
+            <a href="page2_3.html"
+              ><div class="back">
+                <i class="fa-solid fa-arrow-left" style="color: white"></i>
+                <p>Back to Shop</p>
+              </div></a
+            >
+            <button>Remove</button>
+          </div>
+        </div>
+        <div class="checkout">
+          <div class="coupon">
+            <p>Have a coupon?</p>
+            <div class="coupon-input">
+              <input type="text" placeholder="Add coupon" />
+              <button>Apply</button>
+            </div>
+          </div>
+          <div class="payment">
+            <div class="sub-price">
+              <div class="subtotal cart-pay">
+                <span>Subtotal:</span><span>$1403.97</span>
+              </div>
+              <div class="discount cart-pay">
+                <span>Discount:</span><span>-$60.00</span>
+              </div>
+              <div class="tax cart-pay">
+                <span>Tax:</span><span>+$14.00</span>
+              </div>
+            </div>
+            <div class="total-price">
+              <div class="total cart-pay">
+                <span>Total:</span><span>$1357.97</span>
+              </div>
+              <div class="checkout-btn">Checkout</div>
+              <div class="pay-method">
+                <img
+                  src="../assets/images/pay_method/american_express.png"
+                  alt=""
+                />
+                <img src="../assets/images/pay_method/mastercard.png" alt="" />
+                <img
+                  src="../assets/images/pay_method/paypal.png"
+                  alt=""
+                  style="width: 42px; height: 25px"
+                />
+                <img src="../assets/images/pay_method/visa.png" alt="" />
+                <img src="../assets/images/pay_method/apple_pay.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Feature  -->
+    <div class="cart-features">
+      <div>
+        <div class="circle-icon">
+          <i
+            class="fa-solid fa-message fa-lg"
+            style="color: #8796a5"
+            aria-hidden="true"
+          ></i>
+        </div>
+        <div class="cart-feature-text">
+          <h3>Secure payment</h3>
+          <p>Have you ever finally just</p>
+        </div>
+      </div>
+      <div>
+        <div class="circle-icon">
+          <i class="fa-solid fa-lock fa-lg" style="color: #8796a5"></i>
+        </div>
+        <div class="cart-feature-text">
+          <h3>Customer support</h3>
+          <p>Have you ever finally just</p>
+        </div>
+      </div>
+      <div>
+        <div class="circle-icon">
+          <i class="fa-solid fa-truck fa-lg" style="color: #8796a5"></i>
+        </div>
+        <div class="cart-feature-text">
+          <h3>Free delivery</h3>
+          <p>Have you ever finally just</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Saved For Later  -->
+    <div class="saved-products">
+      <h3>Saved for later</h3>
+      <div class="saved-products-list">
+        <div class="saved-products-item">
+          <div class="saved-products-image">
+            <img src="../assets/images/saved_products/laptop.png" alt="" />
+          </div>
+          <div class="saved-products-title">
+            <p>$99.50</p>
+            <h4>GoPro HERO6 4K Action Camera - Black</h4>
+            <div class="move-cart">
+              <img
+                src="../assets/images/shopping-cart.png"
+                style="width: 20px"
+                alt=""
+              />
+              <p>Move to cart</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Super Discount -->
+    <div class="super-discount">
+      <div class="super-text">
+        <h3>Super discount on more than 100 USD</h3>
+        <p>Have you ever finally just write dummy info</p>
+      </div>
+      <div class="button-wrapper">
+        <button>Shop now</button>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer style="position: absolute; bottom: -380px">
+      <div class="footer2">
+        <div class="footer-content">
+          <div class="col col1">
+            <div class="Brand">
+              <div class="logo">
+                <img
+                  class="bag-icon"
+                  src="../assets/images/shopping_bag_icon.svg"
+                  alt="Shopping Bag"
+                />
+              </div>
+              <h2>Brand</h2>
+            </div>
+            <p>
+              Best information about the company gies here but now lorem ipsum
+              is
+            </p>
+            <div class="social-icons">
+              <img src="../assets/images/facebook.png" alt="" />
+              <img src="../assets/images/twitter.png" alt="" />
+              <img src="../assets/images/linkedin.png" alt="" />
+              <img src="../assets/images/instagram.png" alt="" />
+              <img src="../assets/images/youtube.png" alt="" />
+            </div>
+          </div>
+          <div class="col col2">
+            <h3>About</h3>
+            <ul>
+              <li>About Us</li>
+              <li>Find Store</li>
+              <li>Categories</li>
+              <li>Blogs</li>
+            </ul>
+          </div>
+          <div class="col col3">
+            <h3>Partnership</h3>
+            <ul>
+              <li>About Us</li>
+              <li>Find Store</li>
+              <li>Categories</li>
+              <li>Blogs</li>
+            </ul>
+          </div>
+          <div class="col col4">
+            <h3>Information</h3>
+            <ul>
+              <li>Help Center</li>
+              <li>Money Refund</li>
+              <li>Shipping</li>
+              <li>Contact Us</li>
+            </ul>
+          </div>
+          <div class="col col5">
+            <h3>Users</h3>
+            <ul>
+              <li>Login</li>
+              <li>Register</li>
+              <li>Settings</li>
+              <li>My Orders</li>
+            </ul>
+          </div>
+          <div class="col col6">
+            <h3>Get app</h3>
+            <ul>
+              <li>
+                <img
+                  class="appdownload"
+                  src="../assets/images/appstore-removebg-preview.png"
+                  alt=""
+                />
+              </li>
+              <li>
+                <img
+                  class="appdownload2"
+                  src="../assets/images/googleplay-removebg-preview.png"
+                  alt=""
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy;2025 Ecommerce</p>
+          <div class="language" style="position: relative">
+            <img src="../assets/images/flags/USA.png" alt="" class="show-lang"/>
+
+            <div class="lang-sa2 show">
+              <i class="fa-solid fa-angle-down fa-lg" id="show-lang"></i>
+            </div>
+            <div class="lang-sa1 no-show">
+              <i class="fa-solid fa-angle-up fa-lg" id="no-show-lang"></i>
+            </div>
+
+            <div class="lang-list-wrapper" id="lang-dropdown">
+              <div class="lang-list">
+                <div>
+                  <img
+                    src="../assets/images/flags/Arabic-Emirates.png"
+                    alt=""
+                  />
+                  <p>Arabic Emirates</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/Australia.png" alt="" />
+                  <p>Australia</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/Britan.png" alt="" />
+                  <p>Britain</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/China.png" alt="" />
+                  <p>China</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/Denmark.png" alt="" />
+                  <p>Denmark</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/France.png" alt="" />
+                  <p>France</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/germany.png" alt="" />
+                  <p>Germany</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/Italy.png" alt="" />
+                  <p>Italy</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/Russia.png" alt="" />
+                  <p>Russia</p>
+                </div>
+                <div>
+                  <img src="../assets/images/flags/USA.png" alt="" />
+                  <p>USA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../JS/page5.js"></script> 
+  </body>
+</html>
