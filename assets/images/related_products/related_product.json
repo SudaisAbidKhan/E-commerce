@@ -1,0 +1,33 @@
+[
+  {
+    "image": "../assets/images/related_products/wallet.png",
+    "name": "Blue formal blazer, medium size",
+    "price": "$7.00 - $99.50"
+  },
+  {
+    "image": "../assets/images/related_products/watch.png",
+    "name": "Blue formal blazer, medium size",
+    "price": "$$32.00-$40.00"
+  },
+  {
+    "image": "../assets/images/related_products/headphone.png",
+    "name": "Blue formal blazer, medium size",
+    "price": "$$32.00-$40.00"
+  },
+  {
+    "image": "../assets/images/related_products/short.png",
+    "name": "Blue formal blazer, medium size",
+    "price": "$32.00-$40.00"
+  },
+  {
+    "image": "../assets/images/related_products/kettle.png",
+    "name": "Blue formal blazer, medium size",
+    "price": "$32.00-$40.00"
+  },
+  {
+    "image": "../assets/images/related_products/holder.png",
+    "name": "Blue formal blazer, medium size",
+    "price": "$32.00-$40.00"
+  }
+  
+]

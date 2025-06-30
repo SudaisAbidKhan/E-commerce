@@ -1,0 +1,23 @@
+[
+  {
+    "image": "../assets/images/saved_products/ipad.png",
+    "name": "GoPro HERO6 4K Action Camera - Black",
+    "price": "$99.50"
+  },
+  {
+    "image": "../assets/images/saved_products/iphone.png",
+    "name": "GoPro HERO6 4K Action Camera - Black",
+    "price": "$99.50"
+  },
+  {
+    "image": "../assets/images/saved_products/watch.png",
+    "name": "GoPro HERO6 4K Action Camera - Black",
+    "price": "$99.50"
+  },
+  {
+    "image": "../assets/images/saved_products/laptop.png",
+    "name": "GoPro HERO6 4K Action Camera - Black",
+    "price": "$99.50"
+  }
+ 
+]

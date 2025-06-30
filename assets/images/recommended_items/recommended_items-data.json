@@ -1,0 +1,62 @@
+[
+  {
+    "image": "../assets/images/recommended_items/shirt.png",
+    "name": "T-shirts with multiple colors, for men",
+    "price": "$10.30",
+    "number": 1
+  },
+  {
+    "image": "../assets/images/recommended_items/browncoat.jpg",
+    "name": "Brown winter coat medium size",
+    "price": "$10.30",
+    "number": 2
+  },
+  {
+    "image": "../assets/images/recommended_items/suitcoat.png",
+    "name": "Blue formal blazer, medium size",
+    "price": "$12.50",
+    "number": 3
+  },
+  {
+    "image": "../assets/images/recommended_items/wallet.png",
+    "name": "Blue wallet for men leather material",
+    "price": "$34.00",
+    "number": 4
+  },
+  {
+    "image": "../assets/images/recommended_items/bag.png",
+    "name": "Jeans bag for travel for men",
+    "price": "$99.00",
+    "number": 5
+  },
+  {
+    "image": "../assets/images/recommended_items/short.png",
+    "name": "Jeans shorts for men blue color",
+    "price": "$9.99",
+    "number": 6
+  },
+  {
+    "image": "../assets/images/recommended_items/headphone.png",
+    "name": "Headset for gaming with mic",
+    "price": "$8.99",
+    "number": 7
+  },
+  {
+    "image": "../assets/images/recommended_items/watch.png",
+    "name": "Smartwatch silver color modern",
+    "price": "$10.30",
+    "number": 8
+  },
+  {
+    "image": "../assets/images/recommended_items/pot.png",
+    "name": "Handmade clay jar for storing food",
+    "price": "$10.30",
+    "number": 9
+  },
+  {
+    "image": "../assets/images/recommended_items/kettle.png",
+    "name": "Electric kettle for boiling water",
+    "price": "$80.95",
+    "number": 10
+  }
+]

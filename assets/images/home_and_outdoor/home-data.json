@@ -1,0 +1,50 @@
+[
+  {
+    "image": "../assets/images/home_and_outdoor/sofa.png",
+    "name": "Soft Chair",
+    "price": "From USD 19",
+    "number": 1
+  },
+  {
+    "image": "../assets/images/home_and_outdoor/lamp.png",
+    "name": "Lamp",
+    "price": "From USD 19",
+    "number": 2
+  },
+  {
+    "image": "../assets/images/home_and_outdoor/form.png",
+    "name": "Mattress",
+    "price": "From USD 19",
+    "number": 3
+  },
+  {
+    "image": "../assets/images/home_and_outdoor/pot.png",
+    "name": "Pot",
+    "price": "From USD 19",
+    "number": 4
+  },
+  {
+    "image": "../assets/images/home_and_outdoor/grinder.png",
+    "name": "Kitchen mixer",
+    "price": "From USD 19",
+    "number": 5
+  },
+  {
+    "image": "../assets/images/home_and_outdoor/juicer.png",
+    "name": "Blenders",
+    "price": "From USD 39",
+    "number": 6
+  },
+  {
+    "image": "../assets/images/home_and_outdoor/homeaccesries.png",
+    "name": "Home appliance",
+    "price": "From USD 19",
+    "number": 7
+  },
+  {
+    "image": "../assets/images/home_and_outdoor/vase.png",
+    "name": "Vase",
+    "price": "From USD 10",
+    "number": 8
+  }
+]

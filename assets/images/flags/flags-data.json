@@ -1,0 +1,62 @@
+[
+  {
+    "image": "../assets/images/flags/Arabic-Emirates.png",
+    "name": "Arabic Emirates",
+    "description": "shopname.ae",
+    "number": 1
+  },
+  {
+    "image": "../assets/images/flags/Australia.png",
+    "name": "Australia",
+    "description": "shopname.ae",
+    "number": 2
+  },
+  {
+    "image": "../assets/images/flags/USA.png",
+    "name": "United States",
+    "description": "shopname.ae",
+    "number": 3
+  },
+  {
+    "image": "../assets/images/flags/Russia.png",
+    "name": "Russia",
+    "description": "shopname.ru",
+    "number": 4
+  },
+  {
+    "image": "../assets/images/flags/Italy.png",
+    "name": "Italy",
+    "description": "shopname.it",
+    "number": 5
+  },
+  {
+    "image": "../assets/images/flags/Denmark.png",
+    "name": "Denmark",
+    "description": "denmark.com.dk",
+    "number": 6
+  },
+  {
+    "image": "../assets/images/flags/France.png",
+    "name": "France",
+    "description": "shopname.com.fr",
+    "number": 7
+  },
+  {
+    "image": "../assets/images/flags/Arabic-Emirates.png",
+    "name": "Arabic Emirates",
+    "description": "shopname.ae",
+    "number": 8
+  },
+  {
+    "image": "../assets/images/flags/China.png",
+    "name": "China",
+    "description": "shopname.ae",
+    "number": 9
+  },
+  {
+    "image": "../assets/images/flags/Britan.png",
+    "name": "Great Britain",
+    "description": "shopname.co.uk",
+    "number": 10
+  }
+]

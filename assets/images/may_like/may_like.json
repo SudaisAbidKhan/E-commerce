@@ -1,0 +1,28 @@
+[
+  {
+    "image": "../assets/images/may_like/suitcoat.png",
+    "name": "Blue formal blazer, medium size",
+    "price": "$7.00 - $99.50"
+  },
+  {
+    "image": "../assets/images/may_like/shirt.png",
+    "name": "T-shirts with multiple colors, for men",
+    "price": "$7.00 - $99.50"
+  },
+  {
+    "image": "../assets/images/may_like/browncoat.jpg",
+    "name": "Brown winter coat medium size",
+    "price": "$7.00 - $99.50"
+  },
+  
+  {
+    "image": "../assets/images/may_like/blueshirt.png",
+    "name": "Men Shirt Sleeve Polo Contrast",
+    "price": "$7.00 - $99.50"
+  },
+  {
+    "image": "../assets/images/may_like/bag.png",
+    "name": "Jeans bag for travel for men",
+    "price": "$7.00 - $99.50"
+  }
+]
