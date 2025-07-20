@@ -18,6 +18,14 @@
     <style></style>
   </head>
   <body>
+    <div class="popup-msg">
+      <img src="../assets/images/check.png" alt="" style="width: 20px" />
+      <p>Subscribed successfully</p>
+    </div>
+    <div class="warning-popup-msg">
+      <img src="../assets/images/cross.png" alt="" style="width: 20px" />
+      <p>Please enter your email address</p>
+    </div>
     <!-- Main Header -->
     <header>
       <a href="index.html" style="text-decoration: none">
@@ -32,6 +40,9 @@
           <h2>Brand</h2>
         </div>
       </a>
+      <div class="mobile-menu-toggle">
+        <i class="fa-solid fa-bars fa-xl"></i>
+      </div>
       <div class="search-form">
         <input type="search" name="search" id="search" placeholder="Search" />
         <select id="category" name="category">
@@ -67,7 +78,7 @@
     </header>
 
     <!-- navigation bar -->
-    <nav class="head-nav">
+    <nav class="head-nav" style="max-width: 97%">
       <div class="tabs">
         <i class="fa-solid fa-bars fa-lg"></i>
         <h3>All Categories</h3>
@@ -340,7 +351,7 @@
               <input
                 type="checkbox"
                 class="custom-checkbox"
-                name="Plastic"
+                name="Plastic cover"
                 id="Plastic"
               />
               <p>Plastic cover</p>
@@ -349,7 +360,7 @@
               <input
                 type="checkbox"
                 class="custom-checkbox"
-                name="8GB"
+                name="8GB Ram"
                 id="8GB"
               />
               <p>8GB Ram</p>
@@ -358,7 +369,7 @@
               <input
                 type="checkbox"
                 class="custom-checkbox"
-                name="Super"
+                name="Super power"
                 id="Super"
               />
               <p>Super power</p>
@@ -367,7 +378,7 @@
               <input
                 type="checkbox"
                 class="custom-checkbox"
-                name="Large"
+                name="Large Memory"
                 id="Large"
               />
               <p>Large Memory</p>
@@ -379,7 +390,7 @@
         <!-- Price -->
         <div class="price-range">
           <div class="price-range-title">
-            <h4>Price range</h4>
+            <h4 style="width: 100px">Price range</h4>
             <div class="price-sa1 no-show">
               <i class="fa-solid fa-angle-down fa-lg" id="show-price"></i>
             </div>
@@ -430,15 +441,7 @@
             </div>
           </div>
           <div class="condition-filter no-show">
-            <div>
-              <input
-                type="checkbox"
-                class="custom-checkbox-condition"
-                name="Any"
-                id="Any"
-              />
-              <p>Any</p>
-            </div>
+            
             <div>
               <input
                 type="checkbox"
@@ -452,7 +455,7 @@
               <input
                 type="checkbox"
                 class="custom-checkbox-condition"
-                name="Brand-new"
+                name="Brand New"
                 id="Brand-new"
               />
               <p>Brand new</p>
@@ -461,7 +464,7 @@
               <input
                 type="checkbox"
                 class="custom-checkbox-condition"
-                name="Old-items"
+                name="Old items"
                 id="Old-items"
               />
               <p>Old items</p>
@@ -487,6 +490,7 @@
                 class="custom-checkbox"
                 name="Five"
                 id="Five"
+                value="Five"
               />
               <img src="../assets/images/ratings/five.png" alt="" />
             </div>
@@ -496,6 +500,7 @@
                 class="custom-checkbox"
                 name="Four"
                 id="Four"
+                value="Four"
               />
               <img src="../assets/images/ratings/four.png" alt="" />
             </div>
@@ -503,8 +508,9 @@
               <input
                 type="checkbox"
                 class="custom-checkbox"
-                name="three"
+                name="Three"
                 id="three"
+                value="Three"
               />
               <img src="../assets/images/ratings/three.png" alt="" />
             </div>
@@ -512,8 +518,9 @@
               <input
                 type="checkbox"
                 class="custom-checkbox"
-                name="two"
+                name="Two"
                 id="two"
+                value="Two"
               />
               <img src="../assets/images/ratings/two.png" alt="" />
             </div>
@@ -522,7 +529,7 @@
       </aside>
 
       <!-- Product List Content -->
-      <div class="content"></div>
+      <div class="content product-popup"></div>
     </div>
 
     <div class="next-page">
@@ -557,17 +564,23 @@
       </div>
     </div>
 
-    <footer style="position: absolute; top: 1744px">
+    <footer style="position: absolute; bottom: 1">
       <div class="footer1">
         <h3>Subscribe on our newsletter</h3>
         <p>
           Get daily news on upcoming offers from many suppliers all over the
           world
         </p>
-        <div class="sub">
-          <img src="../assets/images/email.png" alt="email pic" />
-          <input type="email" placeholder="Email" />
-          <button>Subscribe</button>
+        <div class="sub" style="gap: 50px">
+          <div style="position: relative">
+            <img
+              src="../assets/images/email.png"
+              alt="email pic"
+              class="email-pic"
+            />
+            <input class="email" type="email" placeholder="Email" />
+          </div>
+          <button class="subscribe">Subscribe</button>
         </div>
       </div>
       <div class="footer2">
