@@ -3,6 +3,7 @@
   margin: 0px;
   padding: 0px;
   font-family: "Inter", sans-serif;
+  box-sizing: border-box;
 }
 body {
   display: flex;
@@ -10,27 +11,33 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #f6fafc;
+  width: 100%;
+  overflow-x: hidden;
 }
-a{
+a {
   text-decoration: none;
   color: inherit;
-
 }
 .hero {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1200px;
-  height: 450px;
+  width: 95%;
+  max-width: 1200px;
+  height: auto;
+  min-height: 450px;
   border: 1px solid #dee2e7;
   border-radius: 6px;
   margin: 20px;
   gap: 20px;
   background-color: white;
+  flex-wrap: wrap;
 }
 .menu {
-  width: 237px;
-  height: 360px;
+  width: 100%;
+  max-width: 237px;
+  height: auto;
+  min-height: 360px;
   color: #505050;
 }
 .menu ul li {
@@ -38,7 +45,7 @@ a{
   font-size: 16px;
   font-weight: 400;
   width: 220px;
-  height: 20px;
+  height: 40px;
   padding: 10px;
   border-radius: 6px;
   display: flex;
@@ -56,7 +63,8 @@ a{
 }
 
 .banner {
-  width: 665px;
+  width: 100%;
+  max-width: 665px;
   height: 360px;
   background-image: url("../assets/images/Maskgroup.png");
   background-position: center;
@@ -93,10 +101,12 @@ a{
   align-items: center;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
+  max-width: 215px;
 }
 .user-auth-section {
-  width: 185px;
-  height: 120px;
+  width: 200px;
+  height: 150px;
   background-color: #dff0ff;
   border-radius: 6px;
   padding: 15px;
@@ -129,8 +139,8 @@ a{
   background-color: white;
 }
 .promo-new-supplier {
-  width: 185px;
-  height: 65px;
+  width: 200px;
+  height: 95px;
   background-color: orange;
   border-radius: 6px;
   padding: 15px;
@@ -140,8 +150,8 @@ a{
   color: white;
 }
 .promo-supplier-preferences {
-  width: 185px;
-  height: 65px;
+  width: 200px;
+  height: 95px;
   background-color: #00c0c5;
   border-radius: 6px;
   padding: 15px;
@@ -153,13 +163,15 @@ a{
 
 .deal-offers {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: white;
   border: 1px solid #dee2e7;
   border-radius: 6px;
-  width: 1200px;
+  width: 95%;
+  max-width: 1200px;
   margin: 5px 0px 20px 0px;
+  flex-wrap: wrap;
 }
 .offers-banner {
   width: 290px;
@@ -185,13 +197,14 @@ a{
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-wrap: wrap;
 }
 .offer-items div {
   border-right: 1px solid #dee2e7;
   border-left: 1px solid #dee2e7;
   height: 240px;
   padding: 20px 0px 0px 0px;
-  width: 180px;
+  width: 181px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -254,34 +267,37 @@ a{
   background-color: white;
   border: 1px solid #dee2e7;
   border-radius: 6px;
-  width: 1200px;
+  width: 95%;
+  max-width: 1200px;
   margin: 5px 0px 20px 0px;
-  height: 257px;
+  height: auto;
+  min-height: 257px;
 }
 .home-outdoor-banner {
   width: 280px;
-  height: 257px;
-  background-image: url(../assets/images/home_and_outdoor/background.jpg);
+  height: 381px;
+  padding: 15px;
+  background: linear-gradient(to right, #ffe8bac0, #ffe8ba50),
+    url(../assets/images/home_and_outdoor/background.jpg);
   background-position: -12px center;
-  background-size: 440px;
+  background-size: 545px 381px;
   background-repeat: no-repeat;
+  transform: scaleX(-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
   transform: scaleX(-1);
 }
 .electronics-banner {
   width: 280px;
-  height: 257px;
+  height: 362px;
   background-image: url(../assets/images/electronics/background.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.home-outdoor-banner div {
-  width: 250px;
-  height: 228px;
-  transform: scaleX(-1);
-  background: linear-gradient(to right, #ffe8bac0, #ffe8ba50);
-  padding: 15px;
-}
+
 .electronics-banner div {
   width: 250px;
   height: 228px;
@@ -294,7 +310,11 @@ a{
   width: 120px;
   margin-top: 20px;
 }
-.home-outdoor-banner div button,
+.home-outdoor-banner h2,
+.home-outdoor-banner button {
+  transform: scaleX(-1); /* To unflip content */
+}
+.home-outdoor-banner button,
 .electronics-banner div button {
   width: 123px;
   height: 40px;
@@ -309,14 +329,14 @@ a{
 }
 .home-outdoor-items,
 .electronics-items {
-  width: 920px;
-  height: 257px;
+  width: 100%;
+  max-width: 920px;
+  height: auto;
+  min-height: 257px;
   display: grid;
-  grid-template-columns: 230px 230px 230px 230px;
-  grid-template-rows: 128.5px 128.5px;
-  grid-template-areas:
-    "item1 item2 item3 item4"
-    "item5 item6 item7 item8";
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: minmax(128.5px, auto);
+  gap: 5px;
 }
 .item {
   padding: 15px;
@@ -352,7 +372,7 @@ a{
 }
 .item img {
   width: 77px;
-  transform: translateX(126px) translateY(-43px);
+  transform: translateX(104px) translateY(-43px);
 }
 .item h3 {
   font-size: 16px;
@@ -367,8 +387,10 @@ a{
 }
 
 .request-quote-box {
-  width: 1200px;
-  height: 392px;
+  width: 95%;
+  max-width: 1200px;
+  height: auto;
+  min-height: 392px;
   background-image: url(../assets/images/electronics/background.png);
   background-position: center;
   background-size: cover;
@@ -379,13 +401,16 @@ a{
 .request-quote-box > div {
   background: linear-gradient(to right, #2c7cf1, #00d0ff88);
   padding: 35px;
-  width: 1129px;
-  height: 320px;
+  width: 100%;
+  height: 392px;
+  min-height: 320px;
   border-radius: 4px;
   border: 1px solid #e0e0e0;
   display: flex;
   justify-content: space-between;
   align-items: start;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 .request-text h2 {
   color: white;
@@ -488,17 +513,20 @@ a{
 }
 
 .recommended-items {
-  width: 1200px;
-  height: 665px;
+  width: 95%;
+  max-width: 1200px;
+  height: auto;
+  min-height: 665px;
 }
 .recommended-grid {
-  width: 920px;
-  height: 257px;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
   margin-top: 20px;
   display: grid;
   gap: 20px;
-  grid-template-columns: 218px 218px 218px 218px 218px;
-  grid-template-rows: 291px 291px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: minmax(291px, auto);
 }
 .r-item {
   width: 187px;
@@ -527,13 +555,15 @@ a{
   text-align: left;
 }
 .r-item img {
-  width: 150px;
+  width: 105px;
   height: 170px;
 }
 
 .service {
-  width: 1200px;
-  height: 256px;
+  width: 95%;
+  max-width: 1200px;
+  height: auto;
+  min-height: 256px;
   margin: 25px;
 }
 .service-items {
@@ -542,6 +572,7 @@ a{
   align-items: center;
   gap: 23px;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 .s-item {
   width: 280px;
@@ -594,7 +625,7 @@ a{
   border: 2px solid white;
   border-radius: 50%;
 }
-.s-img img{
+.s-img img {
   position: absolute;
   top: 15px;
   left: 15px;
@@ -610,17 +641,21 @@ a{
 }
 
 .suppliers-grid {
-  width: 1200px;
-  height: 100px;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  min-height: 100px;
   margin-top: 20px;
   display: grid;
   gap: 20px;
-  grid-template-columns: 224px 224px 224px 224px 224px;
-  grid-template-rows: 40px 40px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: minmax(40px, auto);
 }
 .suppliers {
-  width: 1200px;
-  height: 138px;
+  width: 95%;
+  max-width: 1200px;
+  height: auto;
+  min-height: 138px;
   margin: 0px 0px 33px 0px;
 }
 .supplier-item {
@@ -640,4 +675,223 @@ a{
   font-size: 13px;
   font-weight: 400;
   color: #8b96a5;
+}
+
+.popup-msg {
+  color: rgb(91, 167, 15);
+  background-color: rgb(180 255 180);
+  border-radius: 6px;
+  border: 2px solid rgb(100 200 100);
+  position: fixed;
+  z-index: 99;
+  top: -136px;
+  width: 323px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease-in;
+}
+.warning-popup-msg {
+  color: rgb(167, 15, 15);
+  background-color: rgb(255, 180, 180);
+  border-radius: 6px;
+  border: 2px solid rgb(200, 100, 100);
+  position: fixed;
+  z-index: 99;
+  top: -136px;
+  width: 323px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease-in;
+}
+.subscribe .loader {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #333;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fa-solid,
+.subscribe {
+  cursor: pointer;
+}
+/* Responsive code */
+
+@media screen and (max-width: 1200px) {
+  .hero,
+  .deal-offers,
+  .home-outdoor,
+  .electronics,
+  .request-quote-box,
+  .recommended-items,
+  .service,
+  .suppliers {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .banner {
+    width: 95%;
+    max-width: 130%;
+  }
+
+  .menu {
+    width: 90%;
+    max-width: none;
+    display: none;
+  }
+
+  .user-sidebar {
+    width: 90%;
+    max-width: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: none;
+  }
+
+  .request-quote-box > div {
+    justify-content: center;
+  }
+
+  .request-text,
+  .request-box {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .request-text h2,
+  .request-text p {
+    width: 100%;
+  }
+  .home-outdoor,
+  .electronics {
+    flex-wrap: wrap;
+  }
+  .request-quote-box > div {
+    height: auto;
+  }
+  .electronics-banner {
+    width: 100%;
+  }
+  .home-outdoor-banner {
+    width: 1216px;
+    background-size: 1211px 554px;
+  }
+  .deal-offers {
+    display: flex;
+    justify-content: center;
+  }
+  .offers-banner {
+    justify-content: center;
+    align-items: center;
+    height: 157px;
+  }
+  .offer-items {
+    justify-content: space-between;
+    overflow: scroll;
+    flex-wrap: nowrap;
+    border-top: 2px solid #dee2e7;
+  }
+  .offer-items img {
+    width: 80px;
+    height: 80px;
+  }
+  .offer-items a:nth-child(3) img {
+    width: 105px !important;
+    height: 80px;
+  }
+  .r-item img {
+    width: 112px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .offer-items div {
+    max-width: 150px;
+  }
+
+  .home-outdoor-banner,
+  .electronics-banner {
+    width: 100%;
+  }
+
+  .home-outdoor-items,
+  .electronics-items {
+    width: 100%;
+  }
+
+  .service-items {
+    gap: 15px;
+  }
+
+  .s-item {
+    width: 45%;
+  }
+
+  .s-img {
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 576px) {
+  .offer-items div {
+    max-width: 120px;
+  }
+
+  .r-item {
+    width: 100%;
+  }
+
+  .s-item {
+    width: 90%;
+  }
+
+  .request-box input,
+  .request-box form textarea {
+    width: 90%;
+  }
+
+  .quantity input {
+    width: 60%;
+  }
+
+  .quantity select {
+    width: 30%;
+  }
+  .home-outdoor-items a{
+    margin-left: 60px;
+  }
+  
+}
+
+@media screen and (max-width: 430px){
+  .electronics-items a{
+    margin-left: 60px;
+  }
 }
