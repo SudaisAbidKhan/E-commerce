@@ -115,13 +115,13 @@ no_show_money.addEventListener("click", () => {
 });
 
 // Add click functionality to currency list items
-currency_items.forEach(item => {
+currency_items.forEach((item) => {
   item.addEventListener("click", () => {
     // Update the main heading
     show_pay.textContent = item.textContent;
 
     // Reset all items' styles
-    currency_items.forEach(i => i.style.color = "inherit");
+    currency_items.forEach((i) => (i.style.color = "inherit"));
 
     // Highlight selected item
     item.style.color = "blue";
@@ -200,7 +200,7 @@ no_show_flag.addEventListener("click", () => {
 });
 
 // Click event for each flag
-ship_items.forEach(item => {
+ship_items.forEach((item) => {
   item.addEventListener("click", () => {
     let country = item.querySelector("p").textContent;
     let flag = item.querySelector("img").src;
@@ -210,7 +210,7 @@ ship_items.forEach(item => {
     show_ship_img.src = flag;
 
     // Reset all item styles
-    ship_items.forEach(div => div.style.border = "none");
+    ship_items.forEach((div) => (div.style.border = "none"));
 
     // Highlight selected
     item.style.border = "2px solid blue";
@@ -257,7 +257,7 @@ no_show_lang.addEventListener("click", () => {
 });
 
 // Handle click on language options
-lang_items.forEach(item => {
+lang_items.forEach((item) => {
   item.addEventListener("click", () => {
     let img = item.querySelector("img").src;
 
@@ -265,7 +265,7 @@ lang_items.forEach(item => {
     show_lang_img.src = img;
 
     // Reset borders
-    lang_items.forEach(div => div.style.border = "none");
+    lang_items.forEach((div) => (div.style.border = "none"));
 
     // Highlight selected
     item.style.border = "2px solid blue";
@@ -276,3 +276,95 @@ lang_items.forEach(item => {
     lang_wrapper.classList.remove("show");
   });
 });
+
+// Dealing with the subcribe button
+let subcribe = document.querySelector(".subscribe");
+let popup = document.querySelector(".popup-msg");
+let warning_popup = document.querySelector(".warning-popup-msg");
+let email = document.querySelector(".email");
+let email_pic = document.querySelector(".email-pic");
+
+subcribe.addEventListener("click", () => {
+  subcribe.innerHTML = "Subscribing...";
+  subcribe.disabled = true;
+
+  // Add loading spinner
+  subcribe.style.position = "relative";
+  subcribe.innerHTML += `<span class="loader"></span>`;
+  subcribe.style.width = "255px";
+  email_pic.style.left = "10px"
+  
+  if (email.value === "") {
+    console.log("Email is empty");
+    setTimeout(() => {
+      warning_popup.style.top = "6px";
+      warning_popup.style.zIndex = "100";
+      popup.style.zIndex = "99";
+      resetButton();
+    }, 500);
+    setTimeout(() => {
+      warning_popup.style.top = "-139px";
+    }, 6000);
+  } else {
+    console.log("Email entered:", email.value);
+    console.log("clicked");
+    setTimeout(() => {
+      popup.style.top = "6px";
+      popup.style.zIndex = "100";
+      warning_popup.style.zIndex = "99";
+      resetButton();
+    }, 1500);
+    setTimeout(() => {
+      popup.style.top = "-139px";
+    }, 6000);
+  }
+});
+
+function resetButton() {
+  subcribe.innerHTML = "Subscribe";
+  subcribe.style.width = "215px";
+  email_pic.style.left = "10px"
+  subcribe.disabled = false;
+}
+
+// Mobile menu toggle functionality
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const searchForm = document.querySelector('.search-form');
+const actions = document.querySelector('.actions');
+
+if (mobileMenuToggle) {
+  mobileMenuToggle.addEventListener('click', function() {
+    console.log('Mobile menu toggle clicked');
+    searchForm.classList.toggle('mobile-visible');
+    actions.classList.toggle('mobile-visible');
+  });
+}
+
+document.addEventListener("click", (e) => {
+  // Check if the click is outside any dropdown
+  if (!e.target.closest(".language") &&
+      !e.target.closest(".pay") &&
+      !e.target.closest(".ship") &&
+      !e.target.closest(".help-sa1") &&
+      !e.target.closest(".help-sa2")) {
+
+    // Close all dropdowns
+    lang_wrapper.classList.remove("show");
+    lang_sa1.classList.replace("no-show", "show");
+    lang_sa2.classList.replace("show", "no-show");
+
+    help_wrapper.classList.remove("show");
+    help_sa1.classList.replace("no-show", "show");
+    help_sa2.classList.replace("show", "no-show");
+
+    currency_wrapper.classList.remove("show");
+    money_sa1.classList.replace("no-show", "show");
+    money_sa2.classList.replace("show", "no-show");
+
+    ship_wrapper.classList.remove("show");
+    flag_sa1.classList.replace("no-show", "show");
+    flag_sa2.classList.replace("show", "no-show");
+  }
+});
+
+
