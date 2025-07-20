@@ -1,8 +1,11 @@
+// Range Slider and Input Sync
 const minRange = document.getElementById("minRange");
 const maxRange = document.getElementById("maxRange");
 const minInput = document.getElementById("minInput");
 const maxInput = document.getElementById("maxInput");
 const applyBtn = document.getElementById("applyBtn");
+
+let globalProductData = []; // Store product data for reuse
 
 function updateTrackBackground() {
   const min = +minRange.value;
@@ -10,12 +13,9 @@ function updateTrackBackground() {
   const range = 999999;
   const minPercent = (min / range) * 100;
   const maxPercent = (max / range) * 100;
-  document
-    .querySelector(".slider-track")
-    .style.setProperty("--min", `${minPercent}%`);
-  document
-    .querySelector(".slider-track")
-    .style.setProperty("--max", `${maxPercent}%`);
+  const slider = document.querySelector(".slider-track");
+  slider.style.setProperty("--min", `${minPercent}%`);
+  slider.style.setProperty("--max", `${maxPercent}%`);
 }
 
 minRange.addEventListener("input", () => {
@@ -59,211 +59,186 @@ maxInput.addEventListener("change", () => {
 });
 
 applyBtn.addEventListener("click", () => {
-  alert(`Applied: Min = ${minInput.value}, Max = ${maxInput.value}`);
+  renderCurrentView();
 });
 
-async function Displaypage2productflex() {
-  let response = await fetch("../assets/images/page2_product/p2_products.json");
-  let data = await response.json();
-  console.log(data);
-
-  let p2_product_items = document.querySelector(".content");
-  p2_product_items.classList.add("flex");
-  p2_product_items.classList.remove("grid");
-
-  p2_product_items.innerHTML = "";
-  data.forEach((element) => {
-    p2_product_items.innerHTML =
-      p2_product_items.innerHTML +
-      `<a href="page4.html"><div class="product">
-          <img src="${element.image}" alt="" />
-          <div class="sec">  
-            <div class="product-title">
-              <h3>${element.name}</h3>
-              <div class="heart_fav">
-                <img src="../assets/images/page2_product/heart.png" alt="" />
-              </div>
-              </div>
-              <h2>${element.discount_price} <s>${element.original_price}</s></h2>
-            
-            <div class="price">
-              <img src="../assets/images/ratings/five.png" alt="five" />
-              <p class="reviews">${element.reviews}</p>
-              <span></span>
-              <p>${element.order} orders</p>
-              <span></span>
-              <p>Free Shipping</p>
-            </div>
-            <div class="detail">
-              <p>
-                ${element.details}
-              </p>
-              <p>View details</p>
-            </div>
-          </div>
-            
-        </div></a>`;
-  });
+// Product Fetching
+async function fetchProductData() {
+  const response = await fetch("../assets/images/page2_product/p2_products.json");
+  globalProductData = await response.json();
+  renderCurrentView();
 }
-async function Displaypage2productgrid() {
-  let response = await fetch("../assets/images/page2_product/p2_products.json");
-  let data = await response.json();
-  console.log(data);
 
-  let p2_product_items = document.querySelector(".content");
-  p2_product_items.classList.add("grid");
-  p2_product_items.classList.remove("flex");
+// Main Filtering Logic
+function getFilteredProducts(data) {
+  const brandChecks = [...document.querySelectorAll('.brand-filter input:checked')].map(cb => cb.name);
+  const conditionChecks = [...document.querySelectorAll('.condition-filter input:checked')].map(cb => cb.name);
+  const featureChecks = [...document.querySelectorAll('.feature-filter input:checked')].map(cb => cb.name);
+  const ratingChecks = [...document.querySelectorAll('.rating-filter input:checked')].map(cb => cb.value);
+  const minPrice = parseInt(minInput.value) || 0;
+  const maxPrice = parseInt(maxInput.value) || 999999;
 
-  p2_product_items.innerHTML = "";
-  data.forEach((element) => {
-    p2_product_items.innerHTML =
-      p2_product_items.innerHTML +
-      `<a href="page4.html"><div class="product" style="flex-direction: column; padding:40px 10px 30px 25px; height: 333px;">
-          <img src="${element.image}" alt="" />
-          <div class="sec" style="border-top: 1px solid #EFF2F4; justify-content: start; width:280px; padding:15px 0px 0px 0px;">  
-            
-              <div style="display: flex; justify-content: space-between; align-items: center; width:270px; ">
-                <h2 style="font-size: 16px;">${element.discount_price} <s>${element.original_price}</s></h2>
-              <div class="heart_fav">
-                <img src="../assets/images/page2_product/heart.png" alt="" />
-              </div>
-              </div>
-              
-            <div class="price">
-              <img src="../assets/images/ratings/five.png" alt="five" />
-              <p class="reviews">${element.reviews}</p>
-            </div>
-            <div class="product-title" style="font-weight: 400; color: #606060; width: 200px">
-              <h3>${element.name}</h3>
-            </div>
-          </div>
-            
-        </div></a>`;
+  return data.filter(item => {
+    // Price match
+    const price = parseFloat(item.discount_price.replace(/[^0-9.]/g, "")) || 0;
+
+    const priceMatch = price >= minPrice && price <= maxPrice;
+
+    // Brand match
+    const brandMatch = brandChecks.length === 0 || brandChecks.includes(item.brand);
+
+    // Condition match
+    const conditionMatch = conditionChecks.length === 0 || conditionChecks.includes(item.condition);
+
+    // Features match (ANY of the selected features should match)
+    const features = [item.feature1, item.feature2, item.feature3].filter(Boolean);
+    const featureMatch = featureChecks.length === 0 || featureChecks.some(f => features.includes(f));
+
+    // Rating match
+    const ratingMatch = ratingChecks.length === 0 || ratingChecks.includes(item.rating);
+
+    return priceMatch && brandMatch && conditionMatch && featureMatch && ratingMatch;
   });
 }
 
-function DisplayFilters() {
-  const checkboxes = document.querySelectorAll(".custom-checkbox");
-  const filter = document.getElementById("filter"); // Make sure this exists in your HTML
-  let moveup = document.querySelector(".content");
+// Product Renderers
+function renderFlexView(data) {
+  const container = document.querySelector(".content");
+  container.classList.add("flex");
+  container.classList.remove("grid");
+  container.innerHTML = data.map(item => `
+    <a href="page4.html">
+      <div class="product">
+        <img src="${item.image}" alt="" />
+        <div class="sec">
+          <div class="product-title">
+            <h3>${item.name}</h3>
+            <div class="heart_fav">
+              <img src="../assets/images/page2_product/heart.png" alt="" />
+            </div>
+          </div>
+          <h2>${item.discount_price} <s>${item.original_price}</s></h2>
+          <div class="price">
+            <img src="${item.rating_image}" alt="rating" />
+            <p class="reviews">${item.reviews}</p>
+            <span></span>
+            <p>${item.order} orders</p>
+            <span></span>
+            <p>Free Shipping</p>
+          </div>
+          <div class="detail">
+            <p>${item.details}</p>
+            <p>View details</p>
+          </div>
+        </div>
+      </div>
+    </a>`).join("");
+}
 
-  filter.innerHTML = "";
-  if (filter.innerHTML == "") {
-    moveup.style.marginTop = "-36px";
+function renderGridView(data) {
+  const container = document.querySelector(".content");
+  container.classList.add("grid");
+  container.classList.remove("flex");
+  container.innerHTML = data.map(item => `
+    <a href="page4.html">
+      <div class="product" style="flex-direction: column; padding:40px 10px 30px 25px; height: 333px;">
+        <img src="${item.image}" alt="" />
+        <div class="sec" style="border-top: 1px solid #EFF2F4; justify-content: start; width:280px; padding:15px 0px 0px 0px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; width:270px;">
+            <h2 style="font-size: 16px;">${item.discount_price} <s>${item.original_price}</s></h2>
+            <div class="heart_fav">
+              <img src="../assets/images/page2_product/heart.png" alt="" />
+            </div>
+          </div>
+          <div class="price">
+            <img src="${item.rating_image}" alt="rating" />
+            <p class="reviews">${item.reviews}</p>
+          </div>
+          <div class="product-title" style="font-weight: 400; color: #606060; width: 200px">
+            <h3>${item.name}</h3>
+          </div>
+        </div>
+      </div>
+    </a>`).join("");
+}
+
+// View Renderer Controller
+let currentView = "flex";
+function renderCurrentView() {
+  const filtered = getFilteredProducts(globalProductData);
+  if (currentView === "flex") {
+    renderFlexView(filtered);
+  } else {
+    renderGridView(filtered);
   }
+}
 
-  checkboxes.forEach((checkbox) => {
+// Checkbox Listener Setup
+function addCheckboxListeners() {
+  const checkboxes = document.querySelectorAll(
+    '.brand-filter input, .condition-filter input, .feature-filter input, .rating-filter input'
+  );
+  checkboxes.forEach(cb => cb.addEventListener('change', renderCurrentView));
+}
+
+// Filter Tag UI Setup
+function setupFilterUI(className, filterContainerSelector) {
+  const checkboxes = document.querySelectorAll(className);
+  const filter = document.getElementById("filter");
+  const moveup = document.querySelector(".content");
+
+  checkboxes.forEach(checkbox => {
     checkbox.addEventListener("change", () => {
-      if (checkbox.checked) {
-        const brandName = checkbox.name;
+      const brandName = checkbox.name;
+      const existing = filter.querySelector(`.cross[data-brand="${brandName}"]`);
+
+      if (checkbox.checked && !existing) {
         const filterItem = document.createElement("div");
         filterItem.className = "filter-item";
-        filterItem.innerHTML = `
-          <p>${brandName}</p>
-          <i class="fa-solid fa-xmark cross" data-brand="${brandName}"></i>
-        `;
+        filterItem.innerHTML = `<p>${brandName}</p><i class="fa-solid fa-xmark cross" data-brand="${brandName}"></i>`;
         filter.appendChild(filterItem);
 
-        // Handle remove click
         filterItem.querySelector(".cross").addEventListener("click", () => {
           filterItem.remove();
           checkbox.checked = false;
-          if (filter.innerHTML == "") {
-            console.log("remove spavce");
-            moveup.style.marginTop = "-36px";
-          }
+          if (filter.innerHTML === "") moveup.style.marginTop = "-36px";
+          renderCurrentView();
         });
         moveup.style.marginTop = "0px";
-      } else {
-        // Remove the filter if unchecked
-        const crossToRemove = filter.querySelector(
-          `.cross[data-brand="${checkbox.name}"]`
-        );
-        if (crossToRemove) {
-          crossToRemove.parentElement.remove();
-          if (filter.innerHTML == "") {
-            console.log("remove spavce");
-            moveup.style.marginTop = "-36px";
-          }
-        }
+      } else if (!checkbox.checked && existing) {
+        existing.parentElement.remove();
+        if (filter.innerHTML === "") moveup.style.marginTop = "-36px";
+        renderCurrentView();
       }
     });
   });
 }
 
-function DisplayConditionsFilters() {
-  const checkboxes = document.querySelectorAll(".custom-checkbox-condition");
-  const filter = document.getElementById("filter"); // Make sure this exists in your HTML
-  let moveup = document.querySelector(".content");
+// Setup filters
+setupFilterUI(".custom-checkbox", ".brand-filter");
+setupFilterUI(".custom-checkbox-condition", ".condition-filter");
+setupFilterUI(".custom-checkbox-rating", ".rating-filter"); // Added rating filter tags
+addCheckboxListeners();
 
-  checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", () => {
-      if (checkbox.checked) {
-        const brandName = checkbox.name;
-        const filterItem = document.createElement("div");
-        filterItem.className = "filter-item";
-        filterItem.innerHTML = `
-          <p>${brandName}</p>
-          <i class="fa-solid fa-xmark cross" data-brand="${brandName}"></i>
-        `;
-        filter.appendChild(filterItem);
-
-        // Handle remove click
-        filterItem.querySelector(".cross").addEventListener("click", () => {
-          filterItem.remove();
-          checkbox.checked = false;
-
-          if (filter.innerHTML === "") {
-            moveup.style.marginTop = "-36px";
-          }
-        });
-
-        moveup.style.marginTop = "0px";
-      } else {
-        const crossToRemove = filter.querySelector(
-          `.cross[data-brand="${checkbox.name}"]`
-        );
-        if (crossToRemove) {
-          crossToRemove.parentElement.remove();
-          if (filter.innerHTML === "") {
-            moveup.style.marginTop = "-36px";
-          }
-        }
-      }
-    });
-  });
-}
-
-
-DisplayFilters();
-DisplayConditionsFilters();
-
-let filter = document.querySelector(".filter");
-
-Displaypage2productflex();
-updateTrackBackground(); // Call on page load
-
-// let rating_arrow = document.querySelector('.rating-title')
-// rating_arrow.addEventListener("click", ()=>{
-//     let rating_filter = document.querySelector(".rating-filter")
-//     rating_filter.innerHTML = "";
-// })
-
+// View toggle buttons
 let grid = document.querySelector(".gridbtn");
 let flex = document.querySelector(".flexbtn");
-
 grid.addEventListener("click", () => {
+  currentView = "grid";
   grid.style.backgroundColor = "#eff2f4";
   flex.style.backgroundColor = "white";
-
-  Displaypage2productgrid();
+  renderCurrentView();
 });
-
 flex.addEventListener("click", () => {
+  currentView = "flex";
   flex.style.backgroundColor = "#eff2f4";
   grid.style.backgroundColor = "white";
-  Displaypage2productflex();
+  renderCurrentView();
 });
+
+// Initial load
+fetchProductData();
+updateTrackBackground();
 
 //category
 let no_show_cat = document.getElementById("no-show-cat");
@@ -403,6 +378,3 @@ no_show_page.addEventListener("click", () => {
   page_sa2.classList.replace("show", "no-show");
   page_dropdown.classList.add("show");
 });
-
-
-
