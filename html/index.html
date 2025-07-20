@@ -18,6 +18,14 @@
   </head>
   <body>
     <!-- Main Header -->
+     <div class="popup-msg">
+      <img src="../assets/images/check.png" alt="" style="width: 20px;">
+      <p>Subscribed successfully</p>
+     </div>
+     <div class="warning-popup-msg">
+      <img src="../assets/images/cross.png" alt="" style="width: 20px;">
+      <p>Please enter your email address</p>
+     </div>
     <header>
       <a href="index.html" style="text-decoration: none">
         <div class="Brand">
@@ -31,6 +39,9 @@
           <h2>Brand</h2>
         </div></a
       >
+      <div class="mobile-menu-toggle">
+        <i class="fa-solid fa-bars fa-xl"></i>
+      </div>
       <div class="search-form">
         <input type="search" name="search" id="search" placeholder="Search" />
         <select id="category" name="category">
@@ -294,13 +305,12 @@
     <!-- Home and outdoor -->
     <div class="home-outdoor">
       <div class="home-outdoor-banner">
-        <div>
-          <h2>Home and outdoor</h2>
-          <button>Source now</button>
-        </div>
+        <h2>Home and outdoor</h2>
+        <button>Source now</button>
       </div>
       <div class="home-outdoor-items"></div>
     </div>
+    
 
     <!-- Electronics -->
     <div class="electronics">
@@ -446,9 +456,11 @@
           world
         </p>
         <div class="sub">
-          <img src="../assets/images/email.png" alt="email pic" />
-          <input type="email" placeholder="Email" />
-          <button>Subscribe</button>
+          <div style="position: relative;">
+            <img src="../assets/images/email.png" alt="email pic" class="email-pic" />
+            <input class="email" type="email" placeholder="Email" />
+          </div>
+          <button class="subscribe">Subscribe</button>
         </div>
       </div>
       <div class="footer2">
