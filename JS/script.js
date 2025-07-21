@@ -1,6 +1,6 @@
 async function Displayhomeproduct() {
   let response = await fetch(
-    "../assets/images/home_and_outdoor/home-data.json"
+    "/assets/images/home_and_outdoor/home-data.json"
   );
   let data = await response.json();
   console.log(data);
