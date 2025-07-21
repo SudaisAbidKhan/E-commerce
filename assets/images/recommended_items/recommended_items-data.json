@@ -1,6 +1,6 @@
 [
   {
-    "image": "../assets/images/recommended_items/shirt.png",
+    "image": "/assets/images/recommended_items/shirt.png",
     "name": "T-shirts with multiple colors, for men",
     "price": "$10.30",
     "number": 1
