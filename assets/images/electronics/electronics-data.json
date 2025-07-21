@@ -1,48 +1,48 @@
 [
   {
-    "image": "/assets/images/electronics/watch.png",
+    "image": "../assets/images/electronics/watch.png",
     "name": "Smart watches",
     "price": "From USD 19",
     "number": 1
   },
   {
-    "image": "/assets/images/electronics/camera.png",
+    "image": "../assets/images/electronics/camera.png",
     "name": "Cameras",
     "price": "From USD 89",
     "number": 2
   },
   {
-    "image": "/assets/images/electronics/headphone2.png",
+    "image": "../assets/images/electronics/headphone2.png",
     "name": "Headphones",
     "price": "From USD 10",
     "number": 3
   },
   {
-    "image": "/assets/images/electronics/kettle.png",
+    "image": "../assets/images/electronics/kettle.png",
     "name": "Electric kettle",
     "price": "From USD 90",
     "number": 4
   },
   {
-    "image": "/assets/images/electronics/headphone1.png",
+    "image": "../assets/images/electronics/headphone1.png",
     "name": "Gaming set",
     "price": "From USD 35",
     "number": 5
   },
   {
-    "image": "/assets/images/electronics/laptop.png",
+    "image": "../assets/images/electronics/laptop.png",
     "name": " Laptop & PC",
     "price": "From USD 340",
     "number": 6
   },
   {
-    "image": "/assets/images/electronics/pad.png",
+    "image": "../assets/images/electronics/pad.png",
     "name": "Ipad",
     "price": "From USD 19",
     "number": 7
   },
   {
-    "image": "/assets/images/electronics/mobile.png",
+    "image": "../assets/images/electronics/mobile.png",
     "name": "Iphone",
     "price": "From USD 249",
     "number": 8
